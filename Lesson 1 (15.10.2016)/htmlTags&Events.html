@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML Tags & Events</title>
+	<link rel="stylesheet" href="">
+	<meta name="Description" content="Some description">
+	<meta name="Keywords" content="Some keywords">
+	<style>
+	</style>
+	<script>
+	</script>
+</head>
+<body onload="console.log('Page is loaded')" onpageshow="console.log('Page show')" onerror="console.log('Some error occured')" onscroll="console.log('Page is scrolling')" onwheel="/*console.log('User uses mouse wheel')*/" onbeforeunload="alert('Page is about unloaded')" onpagehide="console.log('Page is hidden (User go to another tile)')" onpopstate="console.log('User history has changed')" onresize="console.log('Window resized')" onbeforeprint="console.log('Document will print soon')" onafterprint="console.log('Document has printed')"><!--onoffline="alert('Your browser works offline')" ononline="alert('Your browser works online')"-->
+	<nav font-style="">
+		<li><a href="#htmlBasicTags">HTML Basic Tags</a></li>
+		<li><a href="#htmlProTags">HTML PRO Tags</a></li>
+		<li><a href="#html5Tags">HTML5 Tags</a></li>
+		<a href="http://www.w3schools.com/tags/ev_onload.asp" target="_blank" onclick="console.log('User clicked anchor')"><font color="violet">some link</font></a>
+		<!--<li><a href="#domEvents" color="green">HTML Basic Tags</a></li>
+		<li><a href="#domHtml5Events" color="green">HTML Basic Tags</a></li>-->
+	</nav>
+	<h1 id="htmlBasicTags"><center>HTML Basic Tags</center></h1>
+	<h2> <center>Img tag</center> </h2>
+	<img width="100%" height="500px" src="http://www.zedpix.ru/img/s9/09-1467958422-6896.jpg" alt="Mountains and trees" title="This is image" draggable="true" onclick="console.log('Img is clicked')" ondrag="console.log('Img is dragged')" ondragend="console.log('Img dragging is end')" onmousemove="console.log('Mouse moves over the img')" onmouseover="console.log('Mouse is over the img')" onmouseout="console.log('Mouse is out the img')">
+
+	<h2> <center>Lists</center> </h2>
+	<ul>
+		<li>First line;</li>
+		<li>Second line;</li>
+		<li>Third line;</li>
+		<li>Fourth line;</li>
+		<li>Fifth line.</li>
+	</ul>
+
+	<ol>
+		<li>Buy milk;</li>
+		<li>Buy soda;</li>
+		<li>Buy cherry;</li>
+		<li>Buy potatos;</li>
+		<li>Buy cake.</li>
+	</ol>
+	
+	<dl>
+		<dt>HTML</dt>
+			<dd> is the standard markup language for creating web pages and web applications.</dd>
+		<dt>CSS</dt>
+			<dd> is a style sheet language used for describing the presentation of a document written in a markup language.</dd>
+		<dt>JS</dt>
+			<dd>is a high-level, dynamic, untyped, and interpreted programming language.</dd>
+	</dl>
+
+	<h2> <center>Table and related tags</center> </h2>
+	<table>
+		<caption>Some Table(Caption Tag)</caption>
+		<colgroup span="5" class="columns1and2">
+			<col>
+			<col>
+		</colgroup>
+		<thead>
+			<tr><th>Green</th><th>Red</th><th>Yellow</th><th>Brown</th></tr>
+		</thead>
+		<tbody>
+			<tr><td>Data 1</td><td>Data 2</td><td>Data 3</td><td>Data 4</td></tr>
+			<tr><td>Data 1</td><td>Data 2</td><td>Data 3</td><td>Data 4</td></tr>
+			<tr><td>Data 1</td><td>Data 2</td><td>Data 3</td><td>Data 4</td></tr>
+			<tr><td>Data 1</td><td>Data 2</td><td>Data 3</td><td>Data 4</td></tr>
+			<tr><td>Data 1</td><td>Data 2</td><td>Data 3</td><td>Data 4</td></tr>
+		</tbody>
+		<tfoot>
+			<tr><td>Conclusion 1</td><td>Conclusion 2</td><td>Conclusion 3</td><td>Conclusion 4</td></tr>
+		</tfoot>
+	</table>
+
+	<h2> <center>Form</center> </h2>
+	<form action="" onreset="console.log('User reseted form data')" onsubmit="console.log('User submits form')" onsearch="console.log('User search something')">
+		<h3>Asus feedback form</h3>
+		<h4>Have you ever used Asus products?</h4>
+		<select name="asusUsed" id="">
+			<option value="true">Yes</option>
+			<option value="false">No</option>
+			<option value="none">I don`t want to say</option>
+		</select>
+		<fieldset>
+			<legend>Your address</legend>
+			<label>Country of residence:
+			  <input name="country" list="countries">
+			  <datalist id="countries">
+			      <option>Ukraine</option>
+			      <option>UK</option>
+			      <option>USA</option>
+			  </datalist>
+			 </label>
+			 <br />
+			<label for="housenumber">House number:</label> <input type="number" name="housenumber" id="housenumber" onblur="console.log('User losed focus from house numer')" onfocus="console.log('User is focusing house number')">
+			<br />
+			<label for="street">Street:</label> <input type="text" name="street" id="street" oninput="console.log('Street field gets input')">
+			<br />
+			<label for="postcode">Post code:</label> 
+			<input type="text" name="postcode" id="postcode" onselect="console.log('Text is selecting')" oninvalid="alert('You must fill out the form!');">
+			<br />
+			<button>Send</button>
+			<br />
+			<button type="reset">Reset</button>
+    	</fieldset>
+		
+		<label for="Left">
+			Left
+			<input type="radio" id="Left" name="chooseOne">
+		</label>
+		<label for="Right">
+			Right
+			<input type="radio" id="Right" name="chooseOne">
+		</label>
+		<label for="check">
+			<input name="check" type="checkbox" onchange="console.log('Checkbox value is changed')"/>
+		</label>
+
+		<h3>Key events</h3>
+		<input type="password" onkeydown="console.log('User down a key')" onkeyup="console.log('User up a key')" onkeypress="/*console.log('User presses a key')*/" />
+		<br />
+
+		<font size="5" color="red" face="Arial"><textarea name="" id="" cols="30" rows="10" oncopy="console.log('User copies content')" oncut="console.log('User cut content')" onpaste="console.log('User paste content')">Text. Text. Text. Text. Text.</textarea></font>
+		<br />
+
+		<input type="search" placeholder="search field" oncontextmenu="console.log('User opens context menu')" contextmenu="mymenu">
+		<br />
+
+		<input type="submit" value="Submit">
+	</form>
+
+	<h1 id="htmlProTags"><center>HTML PRO Tags</center></h1>
+	<h2> <center>Pre and Code tags</center> </h2>
+	<pre><code>
+<font color="#0B00FF">public</font> MyMatrix(<font color="#0B00FF">int</font> h, <font color="#0B00FF">int</font> w)
+{
+   <font color="#0B00FF">this</font>.matrix = new double[h, w];
+   <font color="#0B00FF">this</font>.height = h;
+   <font color="#0B00FF">this</font>.width = w;
+
+   <font color="#0B00FF">for</font> (<font color="#0B00FF">int</font> i = 0; i < h; i++)
+   {
+       <font color="#0B00FF">for</font> (<font color="#0B00FF">int</font> j = 0; j < w; j++)
+       {
+           <font color="#0B00FF">this</font>.matrix[i, j] = <font color="#0B00FF">default</font>(<font color="#0B00FF">double</font>);
+       }
+   }
+}
+	</code></pre>
+	<h1 id="html5Tags"><center>HTML 5 Tags</center></h1>
+		<article onclick="console.log('Article is clicked')">
+			<header id="aHeader" class="articleHeader">This is an Html Article</header>
+			<main>
+				<p onmousedown="console.log('Mouse is down on paragraph')" onmouseup="console.log('Mouse is up on paragraph')">Imaginate that you read some text (This is the main part).</p>
+				<p>Imaginate that you read some text (This is the main part).</p>
+				<p>Imaginate that you read some text (This is the main padrt).</p>
+				<p>Imaginate that you read some text (This is the main part).</p>
+			</main>
+			<footer>
+				<p>Some text in footer of the article and meta-data</p>
+				<address>
+					Cherkassy, Ukraine.
+				</address>
+			</footer>
+		</article>
+		<details ontoggle="console.log('User open or close the details')">
+			<summary>Copyright 2016-2016. (Details tag)</summary>
+			<p>All content and graphics on this web site are the property of the company SomeCompanyName.</p>
+		</details>
+		<p height="400px"><progress value="25" max="100">25%</progress> downloaded.</p>
+		<video src="video.mp4" onabort="console.log('Something went wrong with playing video (playing aborted)')" onerror="console.log('Something went wrong with playing video (error)')" onended="console.log('User finished watching the video')" onplay="console.log('Video is ready to play')" onplaying="console.log('Video starts playing')" onwaiting="console.log('Video is waiting resuming')" onpause="console.log('Video is paused')" controls></video>
+	<!--<h1 id="domEvents">DOM Events</h1>
+
+	<h1 id="domHtml5Events">DOM HTML 5 Events</h1>-->
+</body>
+</html>
+
+div X4 center
+add/remove listener
+input with events listeners
+div with output mouse position

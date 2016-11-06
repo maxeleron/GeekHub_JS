@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML Tags & Events</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		body
+		{
+			margin: 50px;
+			font-size: 23px;
+		}
+		input
+		{
+			line-height: 32px;
+			font-size: 30px;
+			height: 32px;
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div class="input1parent">
+		<p>Input with onchange (bubbing up is not prevented)</p>
+		<input class="input1" type="text"/>	
+	</div>
+	<div class="input2parent">
+		<p>Input without bubbing up onchange</p>
+		<input class="input2" type="text"/>	
+	</div>
+	<div class="input3parent">
+		<p>Input with removed onchange (div still has onchange)</p>
+		<input class="input3" type="text"/>	
+	</div>
+	<script>
+		//Getting inputs' parrants
+		var input1parent = document.querySelector(".input1parent");
+		var input2parent = document.querySelector(".input2parent");
+		var input3parent = document.querySelector(".input3parent");
+
+		//Getting inputs
+		var input1 = document.querySelector(".input1");
+		var input2 = document.querySelector(".input2");
+		var input3 = document.querySelector(".input3");
+
+		var inputParrArr = [input1parent, input2parent, input3parent];
+		var inputArr = [input1, input2, input3];
+
+		var inputChange = function(){
+			console.log('input was changed');
+		}
+		var divChange = function(){
+			console.log('div was changed');
+		}
+
+		var input2Change = function(event){
+			event.stopImmediatePropagation();
+		}
+
+		for (var i = 0; i < 3; i++) {
+			inputArr[i].addEventListener('change', inputChange);
+			inputParrArr[i].addEventListener('change', divChange);
+		}
+
+		input2.addEventListener('change', input2Change);
+
+		input3.removeEventListener('change', inputChange);
+
+		
+		
+	</script>
+</body>

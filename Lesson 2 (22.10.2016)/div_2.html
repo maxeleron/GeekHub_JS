@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Parrent padding</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.parrent
+		{
+			padding-top: calc(50vh - 120px);
+			padding-left: calc(50vw - 150px);
+		}
+		.position2
+		{
+			height: 240px;
+			width: 300px;
+
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="parrent">
+		<div class="position2"></div>
+	</div>
+	<script>
+		var parrent = document.querySelector('.parrent');
+		var pTop = window.pageHeight - 120;
+		parrent.style.paddingTop = pTop + "px";
+	</script>
+</body>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML Tags & Events</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.position1
+		{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+
+			height: 240px;
+			width: 300px;
+
+			margin-top: -120px; 
+			margin-left: -150px;
+
+			text-align: center;
+			line-height: 240px;
+			font-size: 40px;
+			background: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div class="position1"></div>
+	<script>
+		var divPosition1 = document.querySelector(".position1");
+		
+		divPosition1.addEventListener('click',mousCoords);
+		function mousCoords(event)
+		{
+			/*var X = event.clientX + document.body.scrollLeft;
+         var Y = event.clientY + document.body.scrollTop;*/
+
+         divPosition1.innerHTML = "X = " + event.clientX + ", Y = " + event.clientY + ";";
+         console.log("X = " + event.clientX + ", Y = " + event.clientY + ";");
+		}
+	</script>
+</body>
